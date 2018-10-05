@@ -1,11 +1,14 @@
-# /etc/fstab: static file system information.
 #
-# Use 'blkid' to print the universally unique identifier for a
-# device; this may be used with UUID= as a more robust way to name devices
-# that works even if disks are added and removed. See fstab(5).
+# /etc/fstab
 #
-# <file system> <mount point>   <type>  <options>       <dump>  <pass>
-# / was on /dev/sda1 during installation
-UUID=6dc2c283-4dc3-4128-a3cb-1cfcc20869c9 /               ext4    errors=remount-ro 0       1
-# swap was on /dev/sda5 during installation
-UUID=f9b146ab-00ec-46ef-b896-2b600d43298c none            swap    sw              0       0
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/VolGroup-lv_root                /           ext4    defaults        1 1
+UUID=1d8cfac6-27f4-464f-9296-04d5bad1d7b2   /boot       ext4    defaults        1 2
+/dev/mapper/VolGroup-lv_home                /home       ext4    defaults        1 2
+/dev/mapper/VolGroup-lv_swap                swap        swap    defaults        0 0
+tmpfs                                       /dev/shm    tmpfs   defaults        0 0
+devpts                                      /dev/pts    devpts  gid=5,mode=620  0 0
+sysfs                                       /sys        sysfs   defaults        0 0
+proc                                        /proc       proc    defaults        0 0

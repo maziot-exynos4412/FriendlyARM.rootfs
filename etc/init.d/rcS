@@ -1,4 +1,5 @@
 #!/bin/sh
+mount -a
 mkdir /dev/pts
 mount -t devpts devpts /dev/pts
 echo /sbin/mdev > /proc/sys/kernel/hotplug
